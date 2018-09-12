@@ -12,7 +12,7 @@ public class MonsterController
 	public MonsterController()
 
 	{
-		myMonster = new MarshmallowMonster();
+		myMonster = new MarshmallowMonster("Bryan", 2, 1, true, 2);
 	}
 
 	// Method secion

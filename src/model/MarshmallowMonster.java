@@ -1,4 +1,4 @@
-ackage model;
+package model;
 
 public class MarshmallowMonster
 
@@ -9,6 +9,7 @@ public class MarshmallowMonster
 	private double legCount;
 	private boolean hasNoses;
 	private int armCount;
+	private int eyeCount;
 
 	public MarshmallowMonster()
 	{
@@ -18,20 +19,22 @@ public class MarshmallowMonster
 	public MarshmallowMonster(String name)
 	{
 		this.name = name;
-
+		
 	}
 	public MarshmallowMonster(String name, double legCount, int eyeCount, boolean hasNoses, int armCount) 
 	{
+		this.legCount = legCount;
+		this.hasNoses = hasNoses;
+		this.armCount = armCount;
+		this.eyeCount = eyeCount;
+		this.name = name;
 	
 		
 	}
 		
-		
-	
-
 	public String toString()
 	{
-		String description = "";
+		String description = "My monster's name is " + name + " he has " + legCount + " legs" + eyeCount + " eyes" + armCount + " arms";
 
 		return description;
 	}
