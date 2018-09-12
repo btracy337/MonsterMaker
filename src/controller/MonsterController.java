@@ -41,8 +41,6 @@ public class MonsterController
 		System.out.println("Your monster name is " + name + " and has " + legs + " legs " + "and " + arms + " arms and " + eyes + " eyes.");
 		if (noses) {System.out.println("Your monster also has noses."); }
 		else {System.out.println("Also, your monster does not have noses.");}
-		in.close();
-		
-		
+		in.close();	
 	}
 }
