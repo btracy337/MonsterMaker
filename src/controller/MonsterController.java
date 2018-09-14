@@ -24,27 +24,57 @@ public class MonsterController
 	}
 	public void start()
 	{
-	JOptionPane.showMessageDialog(null, "Hi how are ya?");
+	//JOptionPane.showMessageDialog(null, "Hi how are ya?");
 	//use this instead of system.out.println
 	//System.out.println(myMonster);
-	myMonster.setarmCount(9999);
+	//myMonster.setarmCount(9999);
 	MarshmallowMonster userMonster;
-	JOptionPane.showMessageDialog(null,"my monster has this many arms: " + myMonster.getarmCount());
+	//JOptionPane.showMessageDialog(null,"my monster has this many arms: " + myMonster.getarmCount());
 	JOptionPane.showMessageDialog(null,"Okay now we are going to have you create a monster!");
-	Scanner in = new Scanner(System.in);
-	JOptionPane.showMessageDialog(null,"What is your monsters name?");
-	String name = in.nextLine();
-	JOptionPane.showMessageDialog(null,"How many legs does your monster have: Please enter a double.");
-	double legs = in.nextDouble();
-	JOptionPane.showMessageDialog(null,"Does your monster have noses true or false?");
-	boolean noses = in.nextBoolean();
-	JOptionPane.showMessageDialog(null,"How many arms does your monster have?");
-	int arms = in.nextInt();
-	JOptionPane.showMessageDialog(null,"How many eyes does your monster have?");
-	int eyes = in.nextInt();
+	//Scanner in = new Scanner(System.in);
+	String name = JOptionPane.showMessageDialog(null,"What is your monsters name?");
+	//String name = in.nextLine();
+	double legs = JOptionPane.showMessageDialog(null,"How many legs does your monster have: Please enter a double.");
+	//double legs = in.nextDouble();
+	boolean noses = JOptionPane.showMessageDialog(null,"Does your monster have noses true or false?");
+	//boolean noses = in.nextBoolean();
+	int arms = JOptionPane.showMessageDialog(null,"How many arms does your monster have?");
+	//int arms = in.nextInt();
+	int eyes = JOptionPane.showMessageDialog(null,"How many eyes does your monster have?");
+	//int eyes = in.nextInt();
 	JOptionPane.showMessageDialog(null,"Your monster name is " + name + " and has " + legs + " legs " + "and " + arms + " arms and " + eyes + " eyes.");
 	if (noses) {JOptionPane.showMessageDialog(null,"Your monster also has noses."); }
 	else {JOptionPane.showMessageDialog(null,"Also, your monster does not have noses.");}
-	in.close();	
+	//in.close();	
+	}
+	public boolean validInt(String maybeInt)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Integer.parseInt(maybeInt);
+			isValid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "You should type an integer value like 12345.");
+		}
+		
+		return isValid;
+	}
+	public boolean validDouble(String maybeDouble)
+	{
+		boolean isValid = false;
+		try
+		{
+			Double.parseDouble(maybeDouble);
+			isValid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "This requirese a double value human!");
+		}
+		return isValid;
 	}
 }

@@ -3,7 +3,7 @@ package model;
 public class MarshmallowMonster
 
 {
-	// ------data member section-----------
+	// ------data member section-----------//
 	// always private
 	private String name;
 	private double legCount;
