@@ -1,6 +1,6 @@
 package controller;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 import model.MarshmallowMonster;
 import javax.swing.JOptionPane;
 
@@ -29,43 +29,48 @@ public class MonsterController
 		// use this instead of system.out.println
 		// System.out.println(myMonster);
 		// myMonster.setarmCount(9999);
-		MarshmallowMonster userMonster;
+		MarshmallowMonster userMonster = new MarshmallowMonster("", 0, 0, false, 0);
 		// JOptionPane.showMessageDialog(null,"my monster has this many arms: " +
 		// myMonster.getarmCount());
 		JOptionPane.showMessageDialog(null, "Okay now we are going to have you create a monster!");
 		// Scanner in = new Scanner(System.in);
-		String name = JOptionPane.showMessageDialog(null, "What is your monsters name?");
+		String name = JOptionPane.showInputDialog(null, "What is your monsters name?");
 		// String name = in.nextLine();
-		double legs = JOptionPane.showMessageDialog(null, "How many legs does your monster have: Please enter a double.");
+		String legs = JOptionPane.showInputDialog(null, "How many legs does your monster have: Please enter a double."); 
+		double legCount = 0;
 		if (validDouble(legs))
 		{
-			double legs = Double.parseDouble(legs);
-			userMonster.setlegCount(legs);
+		    legCount = Double.parseDouble(legs);
+			userMonster.setlegCount(legCount);
 		}
 		// double legs = in.nextDouble();
-		boolean noses = JOptionPane.showMessageDialog(null, "Does your monster have noses true or false?");
+		String noses = JOptionPane.showInputDialog(null, "Does your monster have noses true or false?");
+		boolean hasNose = false;
+		int armCount = 0;
+		int eyeCount = 0;
+		
 		if (validBoolean(noses))
 		{
-			boolean noses = Boolean.parseBoolean(noses);
-			userMonster.sethasNoses(noses);
+			hasNose = Boolean.parseBoolean(noses);
+			userMonster.sethasNoses(hasNose);
 		}
 		// boolean noses = in.nextBoolean();
-		int arms = JOptionPane.showMessageDialog(null, "How many arms does your monster have?");
+		String arms = JOptionPane.showInputDialog(null, "How many arms does your monster have?");
 		if (validInt(arms))
 		{
-			int arms = Integer.parseInt(arms);
-			userMonster.setarmCount(arms);
+		    armCount = Integer.parseInt(arms);
+			userMonster.setarmCount(armCount);
 		}
 		// int arms = in.nextInt();
-		int eyes = JOptionPane.showMessageDialog(null, "How many eyes does your monster have?");
+		String eyes = JOptionPane.showInputDialog(null, "How many eyes does your monster have?");
 		if (validInt(eyes))
 		{
-			int eyes = Integer.parseInt(eyes);
-			userMonster.seteyeCount(eyes);
+		    eyeCount = Integer.parseInt(eyes);
+			userMonster.seteyeCount(eyeCount);
 		}
 		// int eyes = in.nextInt();
 		JOptionPane.showMessageDialog(null, "Your monster name is " + name + " and has " + legs + " legs " + "and " + arms + " arms and " + eyes + " eyes.");
-		if (noses)
+		if (hasNose)
 		{
 			JOptionPane.showMessageDialog(null, "Your monster also has noses.");
 		}
